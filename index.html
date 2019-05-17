@@ -25,7 +25,14 @@
 		maxZoom: 20,
 		ext: 'png'
 });
+
 	
+	var map = L.map('map', {
+		center: [41.39, 2.17],
+		zoom: 11,
+		layers: [tiles]
+	});
+		
 	var southWest = L.latLng(41.18, 1.52),
 northEast = L.latLng(41.6, 2.4);
 var bounds = L.latLngBounds(southWest, northEast);
@@ -34,12 +41,6 @@ map.setMaxBounds(bounds);
 map.on('drag', function() {
 	map.panInsideBounds(bounds, { animate: false });
 });
-	
-	var map = L.map('map', {
-		center: [41.39, 2.17],
-		zoom: 11,
-		layers: [tiles]
-	});
 	
 	</script>
 </body>
